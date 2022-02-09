@@ -1,6 +1,6 @@
 ﻿## Support for Ender 5 Plus with E3DHemera as built by [3D Printing Canada](https://3dprintingcanada.com)
 
-*This firmware is not endorsed by [3D Printing Canada](https://3dprintingcanada.com) and their name is used without permission; this is only my interpretation of their [tutorial](https://www.youtube.com/watch?v=-6C7sGRkZSc).*
+*This repository is not endorsed by [3D Printing Canada](https://3dprintingcanada.com) and their name is used without permission; this is only my interpretation of their [tutorial](https://www.youtube.com/watch?v=-6C7sGRkZSc).*
 
 This firmware supports the hardware configuration from [this build](https://www.youtube.com/watch?v=-6C7sGRkZSc) by [3D Printing Canada](https://3dprintingcanada.com/).
 
