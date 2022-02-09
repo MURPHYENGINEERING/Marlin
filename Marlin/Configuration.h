@@ -2579,8 +2579,10 @@
     #define Z_MAX_POS 400
     #if ENABLED(E3DHemera_3DPC)
       #define Y_BED_SIZE 340
+      #define Y_MAX_POS 340
     #else
       #define Y_BED_SIZE 360
+      #define Y_MAX_POS 360
     #endif
     #if ENABLED(E3DHemera)
       #if ENABLED(E3DHemera_3DPC)
@@ -2594,7 +2596,6 @@
       #define X_BED_SIZE 360
       #define X_MAX_POS 360
     #endif
-    #define Y_MAX_POS 360
     #define ClipClearance 25
   #elif ENABLED(MachineEnder6)
     #define X_BED_SIZE 260
