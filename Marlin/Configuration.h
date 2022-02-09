@@ -2178,7 +2178,14 @@
 #elif ANY(MachineCR10SPro, MachineCR10Max) && ENABLED(HotendStock) && DISABLED(MicroswissDirectDrive)
   #define NOZZLE_TO_PROBE_OFFSET { -27, 0, 0 }
 #elif (ANY(ABL_BLTOUCH, ABL_EZABL,ABL_NCSW) && ENABLED(E3DHemera))
+  #if ENABLED(E3DHemera_3DPC)
+    // Offset from 3D Printing Canada build: https://www.youtube.com/watch?v=-6C7sGRkZSc
+    // - Hemera mount by Baal_: https://www.thingiverse.com/thing:4026886
+    // - BLTouch mount by 3DPC: https://github.com/3d-printing-canada/CR10V2-Hermera
+    #define NOZZLE_TO_PROBE_OFFSET { -3, -50, -4.2 }
+  #else
     #define NOZZLE_TO_PROBE_OFFSET { -40, 0, 0 }
+  #endif
 #elif ENABLED(MachineCR10SV2)
   #if ENABLED(ABL_BLTOUCH)
     #define NOZZLE_TO_PROBE_OFFSET { 45, 7, 0 }
@@ -2571,8 +2578,13 @@
     #define Y_BED_SIZE 360
     #define Z_MAX_POS 400
     #if ENABLED(E3DHemera)
-      #define X_BED_SIZE 352
-      #define X_MAX_POS 352
+      #if ENABLED(E3DHemera_3DPC)
+        #define X_BED_SIZE 330
+        #define X_MAX_POS 330
+      #else
+        #define X_BED_SIZE 352
+        #define X_MAX_POS 352
+      #endif
     #else
       #define X_BED_SIZE 360
       #define X_MAX_POS 360

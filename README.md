@@ -1,4 +1,39 @@
-﻿## Creality CR10S Pro, CR-X, CR10 Max and Ender 5 Plus Touch Screen supported firmware
+﻿## Support for Ender 5 Plus with E3DHemera as built by [3D Printing Canada](https://3dprintingcanada.com)
+
+*This firmware is not endorsed by [3D Printing Canada](https://3dprintingcanada.com) and their name is used without permission; this is only my interpretation of their [tutorial](https://www.youtube.com/watch?v=-6C7sGRkZSc).*
+
+This firmware supports the hardware configuration from [this build](https://www.youtube.com/watch?v=-6C7sGRkZSc) by [3D Printing Canada](https://3dprintingcanada.com/).
+
+#### Parts used
+- [E3D Hemera (3dprintingcanada.com)](https://3dprintingcanada.com/search?q=E3D+hemera)
+- [4020 24V Blower (3dprintingcanada.com)](https://3dprintingcanada.com/products/official-creality-blower-fan-4020-24v)
+- [Hemera mount by Baal_ (thingiverse.com)](https://www.thingiverse.com/thing:4026886)
+- [Fan shroud by Joe Casha (myminifactory.com)](https://www.myminifactory.com/object/3d-print-e3d-hemera-artillery-sidewinder-x1-mount-106053) 
+  - Duct.stl
+- [BLTouch mount by 3D Printing Canada (github.com)](https://github.com/3d-printing-canada/CR10V2-Hermera) 
+  - bltSlider.stl
+  - FanBracket.stl
+
+#### Steps to configure the firmware
+1. Open the project folder in [VSCode](https://code.visualstudio.com/) with [PlatformIO](https://platformio.org/platformio-ide).
+2. Click on the current build environment in the bottom status bar:  
+![Current PlatformIO build environment](https://github.com/MURPHYENGINEERING/Marlin/blob/CrealityDwin_2.0/docs/setup_3DPC/1.PNG?raw=true)
+
+3. Find the list of build environments at the top:  
+![PlatformIO build environment list](https://github.com/MURPHYENGINEERING/Marlin/blob/CrealityDwin_2.0/docs/setup_3DPC/2.PNG?raw=true)
+
+4. The relevant configurations are tagged with `3DPC`:
+- `BIL` enables [bilinear bed leveling](https://marlinfw.org/docs/gcode/G029-abl-bilinear.html)
+- `UBL` enables [unified bed leveling](https://marlinfw.org/docs/gcode/G029-ubl.html)
+- `Slnt` uses the [Creality silent TMC2208 driver board](https://www.creality3dofficial.com/products/upgraded-silent-board-with-tmc2208-driver-for-creality-ender-5-plus)  
+![3DPC compatible build environments](https://github.com/MURPHYENGINEERING/Marlin/blob/CrealityDwin_2.0/docs/setup_3DPC/3.PNG?raw=true)
+
+5. Check that the right build environment has been enabled  
+  ![3DPC compatible build environments](https://github.com/MURPHYENGINEERING/Marlin/blob/CrealityDwin_2.0/docs/setup_3DPC/4.PNG?raw=true)
+
+---
+
+## Creality CR10S Pro, CR-X, CR10 Max and Ender 5 Plus Touch Screen supported firmware
 
 This branch adds support for the Creality touchscreen machines and was split off from the standard Creality branches due to specific custom changes not found upstream. This includes extensions to the EXTui framework among other smaller tweaks that we have been working towards getting submitted upstream. Machines supported here are :
 
