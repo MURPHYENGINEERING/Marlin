@@ -2220,7 +2220,7 @@
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #if ENABLED(ABL_BLTOUCH)
   #if ENABLED(E3DHemera_3DPC)
-    #define PROBING_MARGIN -10
+    #define PROBING_MARGIN 0
   #else
     #define PROBING_MARGIN 3
   #endif
@@ -2582,16 +2582,18 @@
   #elif ENABLED(MachineEnder5Plus)
     #define Z_MAX_POS 400
     #if ENABLED(E3DHemera_3DPC)
-      #define Y_BED_SIZE 340
-      #define Y_MAX_POS 340
+      #define Y_BED_SIZE 330
+      #define Y_MAX_POS 330
+      #define ClipClearance 0
     #else
       #define Y_BED_SIZE 360
       #define Y_MAX_POS 360
+      #define ClipClearance 25
     #endif
     #if ENABLED(E3DHemera)
       #if ENABLED(E3DHemera_3DPC)
-        #define X_BED_SIZE 342
-        #define X_MAX_POS 342
+        #define X_BED_SIZE 332
+        #define X_MAX_POS 332
       #else
         #define X_BED_SIZE 352
         #define X_MAX_POS 352
@@ -2600,7 +2602,6 @@
       #define X_BED_SIZE 360
       #define X_MAX_POS 360
     #endif
-    #define ClipClearance 25
   #elif ENABLED(MachineEnder6)
     #define X_BED_SIZE 260
     #define Y_BED_SIZE 260
@@ -2715,6 +2716,9 @@
 #elif ENABLED(MachineCR30)
   #define X_MIN_POS 0
   #define Y_MIN_POS -5
+#elif ENABLED(E3DHemera_3DPC)
+  #define X_MIN_POS -10
+  #define Y_MIN_POS -10
 #else
   #define X_MIN_POS 0
   #define Y_MIN_POS 0
@@ -3031,7 +3035,7 @@
   //===========================================================================
   //========================= Unified Bed Leveling ============================
   //===========================================================================
-  #define MESH_INSET 0
+  #define MESH_INSET 3
   #if NONE(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max, MachineEnder4, OrigLCD) || ANY(GraphicLCD, OrigLCD)
     #define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
   #endif
