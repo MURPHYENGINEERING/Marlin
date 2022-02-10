@@ -2220,7 +2220,7 @@
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #if ENABLED(ABL_BLTOUCH)
   #if ENABLED(E3DHemera_3DPC)
-    #define PROBING_MARGIN 0
+    #define PROBING_MARGIN -10
   #else
     #define PROBING_MARGIN 3
   #endif
