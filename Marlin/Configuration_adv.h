@@ -2004,12 +2004,12 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-#if NONE(MachineCR10Orig, SKRMiniE3V2, LowMemoryBoard, MachineCR10SPro, MachineCR10Max, SKR13, SKR14, SKR14Turbo, MachineCR10SV2, CrealitySilentBoard) || ENABLED(OrigLA) || (ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11) && ENABLED(SKR_UART))
+#if ENABLED(E3DHemera_3DPC) || NONE(MachineCR10Orig, SKRMiniE3V2, LowMemoryBoard, MachineCR10SPro, MachineCR10Max, SKR13, SKR14, SKR14Turbo, MachineCR10SV2, CrealitySilentBoard) || ENABLED(OrigLA) || (ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11) && ENABLED(SKR_UART))
   #define LIN_ADVANCE
 #endif
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
-  #define LIN_ADVANCE_K 0.0    // Unit: mm compression per 1mm/s extruder speed
+  #define LIN_ADVANCE_K 0.22    // Unit: mm compression per 1mm/s extruder speed
   //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
   #define EXPERIMENTAL_SCURVE // Enable this option to permit S-Curve Acceleration
   #define ALLOW_LOW_EJERK     // Allow a DEFAULT_EJERK value of <10. Recommended for direct drive hotends.
